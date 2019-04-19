@@ -16,5 +16,11 @@ dpkg-buildpackage -b -us -uc -tc
 '''
       }
     }
+    stage('Deploy package') {
+      steps {
+        sh '''#!/bin/bash
+/var/lib/vyos-build/pkg-build.sh'''
+      }
+    }
   }
 }
